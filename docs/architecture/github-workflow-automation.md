@@ -43,7 +43,33 @@ We use `.github/workflows/` to automate tests and deployments:
 
 ---
 
-## 4. AI Agent Integration
+## 4. How to Create and Link a Pull Request
+
+To ensure your work is tracked correctly in the Agile board, follow these steps when creating a PR:
+
+### Step 1: Branch Naming
+Always create a new branch from `main`:
+`git checkout -b feat/US-001.001-ui-checklist`
+
+### Step 2: Create the PR
+When you push your branch, go to GitHub and click **"Compare & pull request"**.
+
+### Step 3: Link the Issue (The "Magic" Link)
+In the **Description** field, use the keyword `Closes` followed by the issue number.
+> **Description**:
+> Implemented the checklist UI for US-001.001.
+>
+> Closes #19
+
+### Step 4: Link the Project (The "Agile" Link)
+On the right-hand sidebar of the PR creation page:
+- **Projects**: Click the gear icon and select `github-project-playground`.
+- **Labels**: Add labels like `type: User Story` or `track: This Weekly`.
+- **Linked issues**: GitHub usually suggests the issue if you used the keyword in the description, but you can also search manually here.
+
+---
+
+## 5. AI Agent Integration
 
 When I (the AI Agent) help you create a feature:
 1.  I will propose a branch name: `feat/[US-ID]-[short-name]`.

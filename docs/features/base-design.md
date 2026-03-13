@@ -17,8 +17,8 @@ This file serves as the **Single Source of Truth** for core technical components
 ## 2. Database Schema (Tables)
 
 ### 2.1 Academy Module
-- `lessons`: Stores content for 7-day roadmaps and tips.
-- `user_lessons`: Junction table for tracking user progress (id, user_id, lesson_id, status, completed_at).
+- `lessons`: Stores roadmap and tip content. (id, epic_id, roadmap_id, day_number, title, content, checklist_items).
+- `user_lessons`: User progress tracking. (id, user_id, lesson_id, is_completed, checklist_state, completed_at).
 
 ### 2.2 Tracking Module
 - `expenses`: User spending logs (id, user_id, amount, category, merchant, receipt_url, date).
@@ -37,7 +37,8 @@ This file serves as the **Single Source of Truth** for core technical components
 
 | Module | Route | Method | Description |
 |---|---|---|---|
-| Academy | `/api/v1/roadmaps/:id` | GET | Get full roadmap content. |
+| Academy | `/api/v1/roadmaps/:id` | GET | [DEPRECATED] Use PostgREST /rest/v1/lessons. |
+| Academy | `/api/v1/academy/complete` | POST | Mark lesson complete and award XP. |
 | Tracking | `/api/v1/ocr/scan` | POST | Upload receipt for OCR processing. |
 | Tracking | `/api/v1/expenses` | POST | Manually add or confirm expense. |
 | AI | `/api/v1/ai/summarize` | POST | Send article URL for AI summarization. |

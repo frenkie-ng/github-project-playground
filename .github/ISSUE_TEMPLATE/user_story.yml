@@ -1,0 +1,18 @@
+name: "📋 User Story"
+description: "Create a specific User Story linked to an Epic"
+title: "US-XXX.YYY - [Name]"
+labels: ["type: User Story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Context
+        - **Epic**: #[Epic-Issue-Number]
+        - **Spec**: [Link to doc/requirement/...]
+
+        ## Description
+        Summarize the user value.
+
+        ## Acceptance Criteria
+        - [ ] Criterion 1
+        - [ ] Criterion 2

@@ -1,0 +1,17 @@
+name: "🏗️ Epic"
+description: "Create a high-level Epic to group User Stories"
+title: "EPIC-XXX - [Name]"
+labels: ["type: EPIC"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Overview
+        Briefly describe the purpose of this Epic.
+
+        ## Key Goals
+        - [ ] Goal 1
+        - [ ] Goal 2
+
+        ## User Stories
+        List the US IDs planned for this Epic.

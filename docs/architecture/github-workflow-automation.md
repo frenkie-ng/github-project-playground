@@ -38,8 +38,9 @@ You can set up built-in workflows in your GitHub Project board:
 We use `.github/workflows/` to automate tests and deployments:
 
 - **Lint & Test**: Triggers on every push to a branch or opening of a PR.
-- **Auto-labeling**: Can be set up to label PRs based on changed files (e.g., `be` label if `backend/` changes).
-- **Preview Deployments**: Auto-deploy a staging version of the app when a PR is opened.
+- **Auto-labeling**: Can be set up to label PRs based on changed files.
+- **Auto-assign**: (New!) Issues and PRs are now automatically assigned to the person who created them.
+- **Auto-add to Project**: (New!) New items are automatically placed into the Project board.
 
 ---
 
@@ -69,9 +70,17 @@ On the right-hand sidebar of the PR creation page:
 
 ---
 
-## 5. AI Agent Integration
+## 6. Standardized Templates
 
-When I (the AI Agent) help you create a feature:
-1.  I will propose a branch name: `feat/[US-ID]-[short-name]`.
-2.  I will remind you to use the `Closes #[IssueID]` syntax in your PR description.
-3.  I can assist in generating the PR description text for you.
+We now use Issue Forms and PR Templates to ensure consistent documentation:
+
+- **Issues**: When creating a new Issue, choose between `Epic`, `User Story`, or `Task` templates.
+- **Pull Requests**: The PR template includes a mandatory checklist for linking issues and project boards.
+
+## 7. Turn-key Workflow for Developers
+
+1.  **Start a task**: Create an Issue using the `Task` template. (It will auto-assign to you and add to the Project board).
+2.  **Code**: Create a branch `feat/US-ID-short-description`.
+3.  **Submit**: Open a PR. (It will auto-assign to you and link to the project).
+    - *Don't forget to add `Closes #ID` in the description.*
+4.  **Done**: Once merged, the issue closes and moves to "Done" automatically. No extra prompts needed.

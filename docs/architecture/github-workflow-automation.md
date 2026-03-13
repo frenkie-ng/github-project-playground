@@ -38,14 +38,49 @@ You can set up built-in workflows in your GitHub Project board:
 We use `.github/workflows/` to automate tests and deployments:
 
 - **Lint & Test**: Triggers on every push to a branch or opening of a PR.
-- **Auto-labeling**: Can be set up to label PRs based on changed files (e.g., `be` label if `backend/` changes).
-- **Preview Deployments**: Auto-deploy a staging version of the app when a PR is opened.
+- **Auto-labeling**: Can be set up to label PRs based on changed files.
+- **Auto-assign**: (New!) Issues and PRs are now automatically assigned to the person who created them.
+- **Auto-add to Project**: (New!) New items are automatically placed into the Project board.
 
 ---
 
-## 4. AI Agent Integration
+## 4. How to Create and Link a Pull Request
 
-When I (the AI Agent) help you create a feature:
-1.  I will propose a branch name: `feat/[US-ID]-[short-name]`.
-2.  I will remind you to use the `Closes #[IssueID]` syntax in your PR description.
-3.  I can assist in generating the PR description text for you.
+To ensure your work is tracked correctly in the Agile board, follow these steps when creating a PR:
+
+### Step 1: Branch Naming
+Always create a new branch from `main`:
+`git checkout -b feat/US-001.001-ui-checklist`
+
+### Step 2: Create the PR
+When you push your branch, go to GitHub and click **"Compare & pull request"**.
+
+### Step 3: Link the Issue (The "Magic" Link)
+In the **Description** field, use the keyword `Closes` followed by the issue number.
+> **Description**:
+> Implemented the checklist UI for US-001.001.
+>
+> Closes #19
+
+### Step 4: Link the Project (The "Agile" Link)
+On the right-hand sidebar of the PR creation page:
+- **Projects**: Click the gear icon and select `github-project-playground`.
+- **Labels**: Add labels like `type: User Story` or `track: This Weekly`.
+- **Linked issues**: GitHub usually suggests the issue if you used the keyword in the description, but you can also search manually here.
+
+---
+
+## 6. Standardized Templates
+
+We now use Issue Forms and PR Templates to ensure consistent documentation:
+
+- **Issues**: When creating a new Issue, choose between `Epic`, `User Story`, or `Task` templates.
+- **Pull Requests**: The PR template includes a mandatory checklist for linking issues and project boards.
+
+## 7. Turn-key Workflow for Developers
+
+1.  **Start a task**: Create an Issue using the `Task` template. (It will auto-assign to you and add to the Project board).
+2.  **Code**: Create a branch `feat/US-ID-short-description`.
+3.  **Submit**: Open a PR. (It will auto-assign to you and link to the project).
+    - *Don't forget to add `Closes #ID` in the description.*
+4.  **Done**: Once merged, the issue closes and moves to "Done" automatically. No extra prompts needed.

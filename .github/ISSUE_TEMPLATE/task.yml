@@ -1,0 +1,17 @@
+name: "🛠️ Task"
+description: "Create an implementation task linked to a User Story"
+title: "TASK-XXX.YYY.ZZZ - [Name]"
+labels: ["type: Task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Context
+        - **Parent Story**: #[Story-Issue-Number]
+
+        ## Description
+        Technical details of what needs to be done.
+
+        ## Acceptance Criteria
+        - [ ] Task completed
+        - [ ] Verified locally
